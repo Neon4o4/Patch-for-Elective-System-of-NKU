@@ -1,0 +1,16 @@
+{  
+  "name": "南开选课系统补丁",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "临时修复南开选课系统提示密码错误无法登录的问题",
+  "permissions": [
+    "http://222.30.32.10/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://222.30.32.10/*"],
+      "run_at": "document_idle",
+      "js": ["js/patch.js"]
+    }
+  ]
+}
