@@ -109,9 +109,11 @@ function loadSidebar() {
     Patch_web();
 }
 
-if (document.readyState != "complete") {
+
+window.onload = loadSidebar;
+if (document.readyState != "complete" && navigator.platform == "MacIntel") {
     while (document.readyState !== "complete") {
-        setInterval(_, 300);
+        setInterval(function(){}, 300);
     }
 }
 else {
