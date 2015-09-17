@@ -104,7 +104,17 @@ function Patch_web() {
     }
 }
 
-window.onload = function() {
-    console.log("ZAIRU");
+function loadSidebar() {
+    console.log("load sidebar");
     Patch_web();
 }
+
+if (document.readyState != "complete") {
+    while (document.readyState !== "complete") {
+        setTimeout(_, 300);
+    }
+}
+else {
+    loadSidebar();
+}
+
