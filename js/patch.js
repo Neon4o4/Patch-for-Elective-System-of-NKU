@@ -108,8 +108,12 @@ function loadSidebar() {
 }
 
 if (navigator.platform == "MacIntel") {
-    if (document.readyState != "complete") { while (document.readyState !== "complete") { setInterval(function() {},300); }} 
-    else { loadSidebar();}
+    if (document.readyState != "complete") { 
+        while (document.readyState !== "complete") { 
+            setInterval(function() {}, 1500); 
+        }
+    } 
+    else { loadSidebar(); }
 } 
 else if(false){
     //Other Platform may needs to change here.
