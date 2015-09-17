@@ -104,11 +104,17 @@ function Patch_web() {
     }
 }
 
-function load() {
-    // console.log("Load");
+function loadSidebar() {
+    console.log("load sidebar");
     Patch_web();
 }
 
-if (window.attachEvent) {window.attachEvent('onload', load);}
-else if (window.addEventListener) {window.addEventListener('load', load, false);}
-else {document.addEventListener('load', load, false);}
+if (document.readyState != "complete") {
+    while (document.readyState !== "complete") {
+        setTimeout(_, 300);
+    }
+}
+else {
+    loadSidebar();
+}
+

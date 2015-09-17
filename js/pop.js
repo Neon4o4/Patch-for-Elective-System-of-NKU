@@ -97,6 +97,7 @@ window.onload = function() {
                 ChangeStatus(response[0]);
             } catch(e) {
                 //maybe Nothing to do
+                console.log(e);
             }
             console.log(response);
         });
