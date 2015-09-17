@@ -1,16 +1,23 @@
 {  
   "name": "南开选课系统补丁",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
-  "description": "修复南开选课系统提示密码错误无法登录，以及登录后左侧边栏无法正常显示的问题",
+  "description": "修复南开选课系统提示密码错误无法登录，以及登录后左侧边栏无法正常显示的问题，抢课功能请慎重使用，以免水表不保",
   "permissions": [
-    "http://222.30.32.10/*"
+    "http://222.30.32.10/*",
+	"<all_urls>",
+	"tabs"
   ],
+
   "content_scripts": [
     {
-      "matches": ["http://222.30.32.10/*"],
+      "matches": ["http://222.30.32.10/*", "<all_urls>"],
       "run_at": "document_idle",
       "js": ["js/patch.js"]
     }
-  ]
+  ],
+  "browser_action": {
+    "default_icon": "img/normal.png",
+    "default_popup": "js/popup.html"
+  }
 }
