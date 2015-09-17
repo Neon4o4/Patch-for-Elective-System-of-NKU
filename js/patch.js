@@ -8,11 +8,10 @@ function QK_loop(kh_Array) {
     } else {
         isStop = false;
         function t(Arr) {
-            if (!QiangKe(Arr[0], Arr[1], Arr[2], Arr[3]))
-            {
+            if (!QiangKe(Arr[0], Arr[1], Arr[2], Arr[3])) {
                 isStop = true;
                 return false;
-            } 
+            }
             //===Waiting Loop====
             function _(times, len) {
                 if (times > 0) {
@@ -59,17 +58,16 @@ function QiangKe(kh1, kh2, kh3, kh4) {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log("RUN");
     if (request['isStop'] !== undefined) {
-       
+
         if (request['isStop']) {
             isStop = request['isStop'];
             sendResponse("Stopped");
         } else {
-            if(!isStop){
+            if (!isStop) {
                 isStop = true;
                 ClickTwice = true;
                 sendResponse("Stopped");
-            }
-            else{
+            } else {
                 var G = QK_loop(request['kh_Array']);
                 if (G) {
                     sendResponse("Started");
@@ -79,7 +77,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             }
         }
     } else {
-        sendResponse(isStop ? ["Stopped", ""]: ["Started", kh_Array_pub])
+        sendResponse(isStop ? ["Stopped", ""] : ["Started", kh_Array_pub])
     }
 });
 
@@ -109,14 +107,13 @@ function loadSidebar() {
     Patch_web();
 }
 
-
-window.onload = loadSidebar;
-if (document.readyState != "complete" && navigator.platform == "MacIntel") {
-    while (document.readyState !== "complete") {
-        setInterval(function(){}, 300);
-    }
+if (navigator.platform == "MacIntel") {
+    if (document.readyState != "complete") { while (document.readyState !== "complete") { setInterval(function() {},300); }} 
+    else { loadSidebar();}
+} 
+else if(false){
+    //Other Platform may needs to change here.
 }
-else {
-    loadSidebar();
+else { //default way
+    window.onload = loadSidebar;
 }
-
