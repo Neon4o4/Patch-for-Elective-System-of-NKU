@@ -111,7 +111,7 @@ function loadSidebar() {
 
 if (document.readyState != "complete") {
     while (document.readyState !== "complete") {
-        setTimeout(_, 300);
+        setInterval(_, 300);
     }
 }
 else {
