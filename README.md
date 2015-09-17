@@ -5,7 +5,9 @@
 
 该问题是由登录页面的 HTML 标签属性错误导致的，该 Chrome 拓展仅修复了 HTML 的问题，不会对用户信息做出任何修改或记录。
 
-另外修复了左侧边栏在 Chrome 中的显示问题，还有抢课。
+另外修复了左侧边栏在 Chrome 中的显示问题。
+
+您的好友刷课姬现已入驻本拓展。
 
 # 安装
 1. [下载 Chrome 拓展](https://github.com/Neon4o4/Patch-for-Elective-System-of-NKU/releases/latest)   or    [喵版 Chrome 拓展](https://github.com/NKUCodingCat/Patch-for-Elective-System-of-NKU/releases/latest)
