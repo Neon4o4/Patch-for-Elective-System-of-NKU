@@ -104,7 +104,11 @@ function Patch_web() {
     }
 }
 
-window.onload = function() {
-    console.log("ZAIRU");
+function load() {
+    // console.log("Load");
     Patch_web();
 }
+
+if (window.attachEvent) {window.attachEvent('onload', load);}
+else if (window.addEventListener) {window.addEventListener('load', load, false);}
+else {document.addEventListener('load', load, false);}
