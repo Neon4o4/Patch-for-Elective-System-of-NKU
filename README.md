@@ -5,10 +5,10 @@
 
 该问题是由登录页面的 HTML 标签属性错误导致的，该 Chrome 拓展仅修复了 HTML 的问题，不会对用户信息做出任何修改或记录。
 
-另外修复了左侧边栏在 Chrome 中的显示问题， 还有抢课。
+另外修复了左侧边栏在 Chrome 中的显示问题，还有抢课。
 
 # 安装
-1. [下载 Chrome 拓展](https://github.com/Neon4o4/Patch-for-Elective-System-of-NKU/releases/download/v0.0.3/Patch-NKU-Elective-System-v0.0.3.crx)   or    [喵版 Chrome 拓展](https://github.com/NKUCodingCat/Patch-for-Elective-System-of-NKU/releases/download/v0.0.4/Patch-for-Elective-System-of-NKU.crx)
+1. [下载 Chrome 拓展](https://github.com/Neon4o4/Patch-for-Elective-System-of-NKU/releases/latest)   or    [喵版 Chrome 拓展](https://github.com/NKUCodingCat/Patch-for-Elective-System-of-NKU/releases/latest)
 2. 新版本的 Chrome 会拒绝安装不是来自官方商店的拓展，因此需要手动安装：
 
         1) 打开 Chrome 设置 -> 拓展程序
