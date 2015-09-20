@@ -82,9 +82,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 //==========下面的别动========
-if (document.getElementsByName("userpwd_text")[0] !== undefined) {
-    document.getElementsByName("userpwd_text")[0].id = "userpwd_text";
-}
+
 
 function addEvent(elem, event, fn) {
     if (elem.attachEvent) {
@@ -95,8 +93,11 @@ function addEvent(elem, event, fn) {
 }
 
 function Patch_web() {
+    if (document.getElementsByName("userpwd_text")[0] !== undefined) {   //Patch for the Password input
+        document.getElementsByName("userpwd_text")[0].id = "userpwd_text";
+    }
     var aa = window.top.document.getElementsByName("leftFrame")[0];
-    if (aa !== undefined) {
+    if (aa !== undefined) {     //patch for the side bar
         aa = aa.contentDocument;
         var t = 110;
         for (var i = 0; i < 21; i++) {
@@ -109,7 +110,7 @@ function Patch_web() {
         }
     }
     var MainFrame = window.top.document.getElementsByName("mainFrame")[0];
-    if (MainFrame) {
+    if (MainFrame) {               //patch for the page scorll
         MainFrame.onload = function () {
             if ((MainFrame.contentDocument.location.pathname == "/xsxk/selectMianInitAction.do") || (MainFrame.contentDocument.location.pathname == "/xsxk/swichAction.do")) {
                 (function (d, script) {
@@ -121,7 +122,6 @@ function Patch_web() {
                 } (MainFrame.contentDocument))
             }
         }
-        //MainFrame.onsubmit = MainFrame.onload;
     }
 
 }
