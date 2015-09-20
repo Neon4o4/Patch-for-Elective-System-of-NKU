@@ -41,21 +41,21 @@ function QiangKe(kh1, kh2, kh3, kh4) {
         F.getElementsByName('xkxh2')[0].value = kh2 || "";
         F.getElementsByName('xkxh3')[0].value = kh3 || "";
         F.getElementsByName('xkxh4')[0].value = kh4 || "";
-    } catch(e) {
+    } catch (e) {
         return false;
     }
-    if (! (!kh1 && !kh2 && !kh3 && !kh4)) {
-        setTimeout(function() {
+    if (!(!kh1 && !kh2 && !kh3 && !kh4)) {
+        setTimeout(function () {
             F.getElementsByName('xuanke')[0].click();
         },
-        500);
+            500);
         return true;
     } else {
         return false;
     }
 }
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log("RUN");
     if (request['isStop'] !== undefined) {
 
@@ -82,13 +82,22 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 //==========下面的别动========
-if (document.getElementsByName("userpwd_text")[0] !== undefined) {
-    document.getElementsByName("userpwd_text")[0].id = "userpwd_text";
+
+
+function addEvent(elem, event, fn) {
+    if (elem.attachEvent) {
+        elem.attachEvent('on' + event, fn)
+    } else {
+        elem.addEventListener(event, fn, false)
+    }
 }
 
 function Patch_web() {
+    if (document.getElementsByName("userpwd_text")[0] !== undefined) {   //Patch for the Password input
+        document.getElementsByName("userpwd_text")[0].id = "userpwd_text";
+    }
     var aa = window.top.document.getElementsByName("leftFrame")[0];
-    if (aa !== undefined) {
+    if (aa !== undefined) {     //patch for the side bar
         aa = aa.contentDocument;
         var t = 110;
         for (var i = 0; i < 21; i++) {
@@ -100,6 +109,21 @@ function Patch_web() {
             }
         }
     }
+    var MainFrame = window.top.document.getElementsByName("mainFrame")[0];
+    if (MainFrame) {               //patch for the page scorll
+        MainFrame.onload = function () {
+            if ((MainFrame.contentDocument.location.pathname == "/xsxk/selectMianInitAction.do") || (MainFrame.contentDocument.location.pathname == "/xsxk/swichAction.do")) {
+                (function (d, script) {
+                    script = d.createElement('script');
+                    script.type = 'text/javascript';
+                    script.onload = function () { };
+                    script.src = chrome.extension.getURL('/js/selectMianInitAction.js');
+                    d.getElementsByTagName('head')[0].appendChild(script);
+                } (MainFrame.contentDocument))
+            }
+        }
+    }
+
 }
 
 function loadSidebar() {
@@ -108,14 +132,10 @@ function loadSidebar() {
 }
 
 if (navigator.platform == "MacIntel") {
-    if (document.readyState != "complete") { 
-        while (document.readyState !== "complete") { 
-            setInterval(function() {}, 1500); 
-        }
-    } 
+    if (document.readyState != "complete") { while (document.readyState !== "complete") { setInterval(function () { }, 300); } }
     else { loadSidebar(); }
-} 
-else if(false){
+}
+else if (false) {
     //Other Platform may needs to change here.
 }
 else { //default way
