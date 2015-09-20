@@ -132,7 +132,11 @@ function loadSidebar() {
 }
 
 if (navigator.platform == "MacIntel") {
-    if (document.readyState != "complete") { while (document.readyState !== "complete") { setInterval(function () { }, 300); } }
+    if (document.readyState != "complete") {
+        while (document.readyState !== "complete") {
+            setInterval(function () { }, 1500);
+        }
+    }
     else { loadSidebar(); }
 }
 else if (false) {
