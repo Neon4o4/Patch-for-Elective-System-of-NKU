@@ -126,22 +126,9 @@ function Patch_web() {
 
 }
 
-function loadSidebar() {
-    console.log("load sidebar");
+function loadPatch() {
+    console.log("load patch");
     Patch_web();
 }
 
-if (navigator.platform == "MacIntel") {
-    if (document.readyState != "complete") {
-        while (document.readyState !== "complete") {
-            setInterval(function () { }, 1500);
-        }
-    }
-    else { loadSidebar(); }
-}
-else if (false) {
-    //Other Platform may needs to change here.
-}
-else { //default way
-    window.onload = loadSidebar;
-}
+window.onload = loadPatch;
