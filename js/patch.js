@@ -93,8 +93,15 @@ function addEvent(elem, event, fn) {
 }
 
 function Patch_web() {
-    if (document.getElementsByName("userpwd_text")[0] !== undefined) {   //Patch for the Password input
-        document.getElementsByName("userpwd_text")[0].id = "userpwd_text";
+    var sel = [
+        'checkcode_text',
+        'usercode_text',
+        'userpwd_text'
+    ];
+    for (var i in sel) {
+        if (document.getElementsByName(sel[i])[0] !== undefined) { //Patch for the Password input
+            document.getElementsByName(sel[i])[0].id = sel[i];
+        }
     }
     var aa = window.top.document.getElementsByName("leftFrame")[0];
     if (aa !== undefined) {     //patch for the side bar
