@@ -1,5 +1,5 @@
 # Patch-for-Elective-System-of-NKU
-临时修复南开选课系统提示密码错误无法登录的问题
+临时修复南开选课系统提示密码错误无法登录的问题, 如需安装，请往下看
 
 针对近期出现的南开选课系统提示密码错误无法正常登录的问题，制作了 Chrome 拓展。
 
@@ -8,6 +8,8 @@
 另外修复了左侧边栏在 Chrome 中的显示问题。
 
 您的好友刷课姬现已入驻本拓展。
+
+### 如果并不想使用刷课姬本喵强烈建议使用这个[油猴脚本](https://github.com/NKUCodingCat/Patch-for-Elective-System-of-NKU-FF/tree/master/Greasemonkey)
 
 # 安装
 1. [下载 Chrome 拓展](https://github.com/Neon4o4/Patch-for-Elective-System-of-NKU/releases/latest)   or    [喵版 Chrome 拓展](https://github.com/NKUCodingCat/Patch-for-Elective-System-of-NKU/releases/latest)
