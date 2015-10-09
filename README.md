@@ -1,7 +1,11 @@
 # Patch-for-Elective-System-of-NKU
-注意：此分支于 2015.10 停止更新，后续开发移至
+
+
+***注意：此分支于 2015.10 停止更新，后续开发移至
 [Everything-in-NKU](https://github.com/Everything-in-NKU/Patch-for-Elective-System-of-NKU)
-继续进行，最新的版本在[这里](https://github.com/Everything-in-NKU/Patch-for-Elective-System-of-NKU/releases/latest)下载。
+继续进行，最新的版本在[这里](https://github.com/Everything-in-NKU/Patch-for-Elective-System-of-NKU/releases/latest)下载。***
+
+
 
 临时修复南开选课系统提示密码错误无法登录的问题, 如需安装，请往下看
 
